@@ -17,3 +17,11 @@
 - There are definitely some problems with those given comments data. So I guess the most practical approach is to predict only based on a small portion of data. 
 
 ![img](EDA.png)
+
+# Challenge 1 - "Warm up predictions"
+
+i didnt do too much on model comparison. especially for the number of comments since the **given** data are missing a lot before August 14.
+
+simply put, I just went full ARIMA (except for the number of comments since the comments number for the last week spiked, ARIMA would return a negative prediction to "balance" this spike, so I used TBATS).
+
+
