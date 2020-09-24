@@ -1,7 +1,8 @@
 # 1. setup
 
 if (!require(pacman)) install.packages("pacman")
-pacman::p_load("tidyverse", "jsonlite", "tidyjson", "tidyr", "lubridate")
+pacman::p_load("tidyverse", "jsonlite", "tidyjson", "tidyr",
+               "lubridate")
 
 # 2. clean articles data
 
@@ -93,17 +94,12 @@ comments_by_day <- tidy_comments %>%
 
 tidy_data <- articles_by_day %>%
   inner_join(daily_top, by = "time") %>%
-  left_join(comments_by_day, by = "time")
-  
+  left_join(comments_by_day, by = "time") %>%
+  mutate(time = as_date(time))
+
 
 save(tidy_data, file = "tidy_data.RData")
-# --------------------------------------------------------------------
 
-# do time series analysis on:
-# 1. the number of posts
-# 2. the number of comments, which should be the count of `kids` variable
-# 3. the `max(score)` within a day
-
-# CLEANING!
+# clean up
 # rm(list = ls())
 # gc()

@@ -1,0 +1,25 @@
+{
+    "id": "DC7023CA",
+    "path": "~/Developer/whyR2020/01-warm-up-predictions.R",
+    "project_path": "01-warm-up-predictions.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1600928236522.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "44,0",
+        "scrollLine": "29"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1600928330,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1600928330708,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -12,14 +12,14 @@
     "properties": {
         "expression": "tidy_data",
         "caption": "tidy_data",
-        "totalObservations": 267,
-        "displayedObservations": 267,
-        "variables": 4,
-        "cacheKey": "45DF9C24",
+        "totalObservations": "267",
+        "displayedObservations": "267",
+        "variables": "4",
+        "cacheKey": "B8F0C690",
         "object": "tidy_data",
         "environment": "",
-        "contentUrl": "grid_resource/gridviewer.html?env=&obj=tidy_data&cache_key=45DF9C24&max_cols=50",
-        "preview": 0
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=tidy_data&cache_key=B8F0C690&max_cols=50",
+        "preview": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 1600925123,

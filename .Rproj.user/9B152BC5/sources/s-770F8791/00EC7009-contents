@@ -15,3 +15,5 @@
     - `score` as the highest score of a single article on that day
 
 - There are definitely some problems with those given comments data. So I guess the most practical approach is to predict only based on a small portion of data. 
+
+![img](EDA.png)
