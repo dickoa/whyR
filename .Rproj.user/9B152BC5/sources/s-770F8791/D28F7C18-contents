@@ -19,17 +19,32 @@ tidy_articles <- tibble(
   url = sapply(articles$url, function(X) if (length(X) == 0) NA_character_ 
                else paste(X, collapse = " "))
 ) %>%
-  mutate(time = parse_datetime(time))
+  mutate(time = parse_datetime(time)) %>%
+  filter(time >= as.Date("2020-01-01"))
 
 tidy_comments <- as_tibble(comments) %>%
   mutate(time = parse_datetime(time)) %>%
-  drop_na()
+  drop_na() %>%
+  filter(time >= as.Date("2020-01-01"))
 
-save(tidy_articles, tidy_comments, file = "tidy_data.RData")
-rm(articles, comments)
+articles_by_day <- tidy_articles %>%
+  group_by(date=lubridate::floor_date(time, "day")) %>%
+  summarize(amount=n())
+articles_by_week <- tidy_articles %>%
+  group_by(date=lubridate::floor_date(time, "week")) %>%
+  summarize(amount=n())
+comments_by_day <- tidy_comments %>%
+  group_by(date=lubridate::floor_date(time, "day")) %>%
+  summarize(amount=n())
+comments_by_week <- tidy_comments %>%
+  group_by(date=lubridate::floor_date(time, "week")) %>%
+  summarize(amount=n())
 
-
-
+# --------------------------------------------------------------------
+save(tidy_articles, tidy_comments,
+     articles_by_day, articles_by_week,
+     comments_by_day, comments_by_week,
+     file = "tidy_data.RData")
 # --------------------------------------------------------------------
 
 # do time series analysis on:
